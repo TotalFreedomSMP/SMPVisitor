@@ -1,0 +1,6 @@
+name: SMPVisitor
+version: ${project.version}
+main: org.tfsmp.smpvisitor.SMPVisitor
+api-version: 1.13
+authors: [super]
+description: Visit places all around the map!
