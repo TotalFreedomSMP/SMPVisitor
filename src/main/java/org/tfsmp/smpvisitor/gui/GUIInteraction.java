@@ -64,7 +64,7 @@ public class GUIInteraction implements Listener
                 player.sendMessage(ChatColor.RED + "Something went wrong!");
                 return;
             }
-            new ConfirmTravelGUI(vl).open(player);
+            new ConfirmTravelGUI(player, vl).open(player);
             return;
         }
         if (stack.getItemMeta().hasDisplayName())
@@ -102,7 +102,7 @@ public class GUIInteraction implements Listener
             String name = stack.getItemMeta().getDisplayName();
             if (name.equals(ChatColor.GREEN + "CONFIRM"))
             {
-                VisitorLocation vl = VisitorLocation.getLocation(inv.getItem(13).getItemMeta().getLore().get(inv.getItem(13).getItemMeta().getLore().size() - 1).substring(2));
+                VisitorLocation vl = VisitorLocation.getLocation(inv.getItem(22).getItemMeta().getLore().get(inv.getItem(22).getItemMeta().getLore().size() - 1).substring(2));
                 player.closeInventory();
                 player.teleport(vl.getLocation());
                 player.sendMessage(ChatColor.GREEN + "You have been transported to " + SUtil.color(vl.getName()) + ChatColor.GREEN + "!");
