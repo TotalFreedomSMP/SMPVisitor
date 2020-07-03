@@ -52,7 +52,7 @@ public class Command_visitorlocations implements CommandExecutor
                 return true;
             }
         }
-        if (args.length >= 8)
+        if (args.length >= 7)
         {
             if (args[0].equalsIgnoreCase("add"))
             {
@@ -70,21 +70,20 @@ public class Command_visitorlocations implements CommandExecutor
                 try
                 {
                     x = Integer.parseInt(args[4]);
-                    y = Integer.parseInt(args[5]);
-                    z = Integer.parseInt(args[6]);
+                    z = Integer.parseInt(args[5]);
                 }
                 catch (NumberFormatException ex)
                 {
                     sender.sendMessage(ChatColor.GRAY + "The coordinates specified were invalid.");
                     return true;
                 }
-                String name = StringUtils.join(args, " ", 7, args.length);
+                String name = StringUtils.join(args, " ", 6, args.length);
                 if (plugin.locations.getKeys(false).contains(identifier))
                 {
                     sender.sendMessage(ChatColor.RED + "A visitor location with that identifier already exists!");
                     return true;
                 }
-                VisitorLocation vl = VisitorLocation.createLocation(identifier, name, new Location(world, x, y, z), skullOwner);
+                VisitorLocation vl = VisitorLocation.createLocation(identifier, name, new Location(world, x, world.getHighestBlockYAt(x, z), z), skullOwner);
                 vl.saveData();
                 sender.sendMessage(ChatColor.GREEN + "Created a new visitor location!");
                 return true;
