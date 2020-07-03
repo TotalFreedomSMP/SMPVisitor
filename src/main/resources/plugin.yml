@@ -11,5 +11,5 @@ commands:
     aliases: [vis]
   visitorlocations:
     description: Create, remove, and clear visitor locations.
-    usage: /<command> <add <identifier> <skullowner> <world> <x> <y> <z> <name...> | remove <identifier> | clear>
+    usage: /<command> <add <identifier> <skullowner> <world> <x> <z> <name...> | remove <identifier> | clear>
     aliases: [vls]
